@@ -1,93 +1,76 @@
+
 # CmdFuze
 
-**CmdFuze** is a powerful and flexible command-line tool designed to automate repetitive tasks, streamline workflows, and boost productivity. Whether you're managing files, automating Git operations, analyzing logs, or scheduling recurring tasks, CmdFuze simplifies these processes with easy-to-use commands and customizable options.
+CmdFuze is a command-line tool designed for file management and Git automation. It helps users clean, copy, delete, and rename files while also streamlining Git operations.
 
 ## Features
 
-- **File Management**: Automate file operations like copying, moving, and deleting.
-- **Git Automation**: Simplify Git tasks such as pulling, pushing, and branch management.
-- **Log Analysis**: Efficiently filter and analyze log files.
-- **Task Scheduling**: Schedule tasks to run at specified times or intervals.
-- **Customizable Commands**: Extend the tool's functionality with your own scripts and plugins.
+- **File Management:**
+  - Clean temporary files
+  - Copy files
+  - Delete files with specific extensions
+  - Rename files
+
+- **Git Automation:**
+  - Pull updates from Git (`git pull`)
+  - Push changes to GitHub (`git push`)
 
 ## Installation
 
-You can install **CmdFuze** using the following steps:
+This project is developed with Python 3. To set up the required libraries, follow these steps:
 
-1. Clone the repository:
+1. Navigate to the project directory:
+   ```bash
+   cd CmdFuze
+   ```
 
-    ```bash
-    git clone https://github.com/yourusername/CmdFuze.git
-    ```
-
-2. Navigate into the project directory:
-
-    ```bash
-    cd CmdFuze
-    ```
-
-3. (Optional) Create a virtual environment:
-
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
-
-4. Install required dependencies:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
+2. Install the required libraries:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
-Once installed, you can use **CmdFuze** from the command line to automate various tasks. Here are some basic examples:
+CmdFuze allows you to perform various tasks using the following commands:
 
-### Examples
+### File Management
 
-- **File Management**:
-    ```bash
-    cmdfuze --task clean
-    ```
-    Cleans up temporary files in the specified directory.
+- **To clean temporary files:**
+  ```bash
+  python cmdfuze.py --task clean --directory <directory_path>
+  ```
 
-- **Git Automation**:
-    ```bash
-    cmdfuze --task pull
-    ```
-    Automatically pulls the latest changes from the remote repository.
+- **To copy a file:**
+  ```bash
+  python cmdfuze.py --task copy --source <source_file> --destination <destination_path>
+  ```
 
-- **Log Analysis**:
-    ```bash
-    cmdfuze --task log --filter "ERROR"
-    ```
-    Filters log files for any entries containing "ERROR".
+- **To delete files with a specific extension:**
+  ```bash
+  python cmdfuze.py --task delete --directory <directory_path> --extension .log
+  ```
 
-- **Scheduling a Task**:
-    ```bash
-    cmdfuze --task schedule --every 24h
-    ```
-    Schedules a task to run every 24 hours.
+- **To rename files:**
+  ```bash
+  python cmdfuze.py --task rename --directory <directory_path> --old_pattern <old> --new_pattern <new>
+  ```
 
-## Roadmap
+### Git Automation
 
-- [ ] Add more customizable task options.
-- [ ] Implement multi-task support.
-- [ ] Improve task scheduling with more precise control.
-- [ ] Add support for more advanced Git operations.
+- **To pull updates from Git:**
+  ```bash
+  python cmdfuze.py --task git-pull --directory <repository_path>
+  ```
+
+- **To push changes to GitHub:**
+  ```bash
+  python cmdfuze.py --task git-push --directory <repository_path> --message "Your commit message"
+  ```
 
 ## Contributing
 
-We welcome contributions from the open-source community! If you'd like to contribute to **CmdFuze**, follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a Pull Request.
-
-Please make sure your code is properly documented and covered by tests where appropriate.
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
