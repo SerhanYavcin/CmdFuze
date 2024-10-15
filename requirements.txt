@@ -1,0 +1,5 @@
+
+# CmdFuze dependencies
+
+# No external dependencies for now, standard Python libraries will be used:
+# argparse, subprocess, os, glob, time
